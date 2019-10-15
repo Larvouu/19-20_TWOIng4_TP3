@@ -15,7 +15,7 @@ A lire impérativement avant de commencer quoi que ce soit, ce sont les règles 
 1. Comprendre le code en HTML et JS
 
 2. Faire en sorte que la fonction start() soit executée sans appuyer sur le bouton #button-load-forecast.
-Le bouton se sert donc plus à rien, il faut l'enlever.
+Le bouton ne sert donc plus à rien, il faut l'enlever.
 *Hint: Voir la propriété onload.*
 
 3. Par défault la ville choisi pour les prédictions météo est Paris. Faire en sorte que votre user puisse rentrer le nom d'une ville dans l'input. Lorsqu'il appuit sur **Actualiser** cela actualise les informations avec la bonne ville. Il faut donc faire une requete différente.

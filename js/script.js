@@ -29,3 +29,5 @@ function start() {
       console.error(error);
     });
 }
+
+window.onload = start;
