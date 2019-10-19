@@ -4,6 +4,8 @@
 const API_KEY = "4081444b7b90198136fefe6ed4ccf35b";
 // Url API
 const API_URL = "https://api.openweathermap.org/data/2.5/weather";
+//Url API pour les jours suivants
+const API_NEXT_URL = "https://api.openweathermap.org/data/2.5/forecast/daily"
 // Base source icon
 const API_URL_ICON = "http://openweathermap.org/img/wn/";
 
@@ -11,11 +13,9 @@ const API_URL_ICON = "http://openweathermap.org/img/wn/";
 class API_WEATHER{
   constructor(city){
     // Si la ville n'est pas définie alors la ville par défault est Paris
-    if(document.getElementById("city-input").value == ""){
+    if(city === undefined)
+    {
       city = "paris";
-    }
-    else{
-      city = document.getElementById("city-input").value;
     }
     this.city = city;
   }
@@ -27,6 +27,15 @@ class API_WEATHER{
     .get(`${API_URL}?q=${this.city}&units=metric&appid=${API_KEY}`, {
       crossdomain: true
     })
+  }
+
+  getThreeDayForecast() {
+    //On a changé de lien pour le lien de l'énoncé (qui permet d'avoir le temps sur 16 jours)
+    //Et 
+    return axios
+      .get(`${API_NEXT_URL}?q=${this.city}&units=metric&appid=${API_KEY}&cnt=3`, {
+        crossdomain: true
+      })
   }
   // Retourne l'element HTML de l'icon symbolisant la méteo.
   getHTMLElementFromIcon(icon){
